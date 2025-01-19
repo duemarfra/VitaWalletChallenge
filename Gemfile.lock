@@ -97,6 +97,8 @@ GEM
       irb (~> 1.10)
       reline (>= 0.3.8)
     diff-lcs (1.5.1)
+    dockerfile-rails (1.7.2)
+      rails (>= 3.0.0)
     drb (2.2.1)
     erubi (1.13.1)
     faker (3.5.1)
@@ -245,6 +247,7 @@ DEPENDENCIES
   bootsnap
   byebug
   debug
+  dockerfile-rails (>= 1.7)
   faker
   pg (~> 1.5, >= 1.5.6)
   puma (>= 5.0)
