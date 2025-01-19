@@ -62,12 +62,22 @@ class TransactionsController < ApplicationController
         message: I18n.t('transaction.success'),
         transaction: {
           is_buy: is_buy,
-          amount_sent: amount_sent.to_s,
-          amount_received: amount_received.to_s
+          amount_sent: is_buy ? balance('usd', amount_sent) : balance('btc', amount_sent),
+          amount_received: is_buy ? balance('btc', amount_received) : balance('usd', amount_received)
         }
       }, status: :created
     end
   rescue ActiveRecord::RecordInvalid => e
     render json: { message: e.message }, status: :unprocessable_entity
+  end
+
+  private
+
+  def balance(currency, amount)
+    if currency == 'usd'
+      format('USD: %.2f', amount).gsub('.', ',')
+    elsif currency == 'btc'
+      format('BTC: %.2f', amount).gsub('.', ',')
+    end
   end
 end

@@ -69,7 +69,8 @@ RSpec.describe TransactionsController, type: :controller do
         expect(response).to have_http_status(:created)
         response_body = JSON.parse(response.body)
         expect(response_body['transaction']['is_buy']).to eq(true)
-        expect(response_body['transaction']['amount_received']).to eq('0.01')
+        expect(response_body['transaction']['amount_sent']).to eq('USD: 500,00')
+        expect(response_body['transaction']['amount_received']).to eq('BTC: 0,01')
         user.reload
         expect(user.usd_balance).to eq(500.0)
         expect(user.btc_balance).to eq(0.51)
@@ -87,7 +88,8 @@ RSpec.describe TransactionsController, type: :controller do
         expect(response).to have_http_status(:created)
         response_body = JSON.parse(response.body)
         expect(response_body['transaction']['is_buy']).to eq(false)
-        expect(response_body['transaction']['amount_received']).to eq('500.0')
+        expect(response_body['transaction']['amount_sent']).to eq('BTC: 0,01')
+        expect(response_body['transaction']['amount_received']).to eq('USD: 500,00')
         user.reload
         expect(user.usd_balance).to eq(1500.0)
         expect(user.btc_balance).to eq(0.49)
