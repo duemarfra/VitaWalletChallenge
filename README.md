@@ -1,6 +1,6 @@
 # Vita Wallet Challenge
 
-Esta es una guia de uso de la api creada para el Challenge de ingreso como developer en "Vita Wallet"
+Esta es una guia de uso de la api creada para el Challenge de ingreso como developer en "Vita Wallet" y está hospedada en "Fly.io" y se pueden usar el siguiente tutorial reemplazando como por ejemplo: "http://localhost:3000/users" por "https://vitawalletchallenge-still-dawn-5281.fly.dev/users".
 
 ## 1 LISTA DE USUARIOS http://localhost:3000/users
 
