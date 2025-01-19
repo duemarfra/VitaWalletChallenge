@@ -1,0 +1,23 @@
+en:
+  application:
+    uid_is_null: "User ID not provided"
+    token_is_null: "Token is null"
+    user_not_found: "User not found"
+    invalid_token: "Invalid token"
+    token_its_ok: "Token its ok"
+  user:
+    created: "User created successfully"
+    signed_in: "User signed_in successfully"
+    invalid_credentials: "invalid credentials"
+    signed_out: "User signed_out successfully"
+    currency_not_found: "Currency not found"
+    funds_added: "Funds added"
+    amount_not_found: "Amount not found"
+    btc_price_success: "BTC Prices in different currencies"
+  transaction:
+    not_found: "Transaction not found."
+    is_buy_required: "The is_buy parameter is required."
+    insufficient_usd: "Insufficient USD balance for this transaction."
+    insufficient_btc: "Insufficient BTC balance for this transaction."
+    success: "Transaction completed successfully."
+    no_transactions: "No transactions found for this user."
